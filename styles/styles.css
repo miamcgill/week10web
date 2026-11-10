@@ -52,3 +52,88 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+/**************************************************************
+Main Styles
+***************************************************************/
+
+.container{
+    /*always give your site a max width + margin 0auto*/
+    max-width:900px;
+    margin: 0 auto;
+    background-color:rgb(124, 244, 152);
+}
+
+h1{
+    font-size:2.2rem;
+    /*an em is always relative to the current font size, 
+    which by default is set to 16px (2.2x16px=35.2px)*/
+
+    /*you can set padding and margin based pn an elements font size with em...*/
+    padding: 0.5em; /*0.5x35.2px=17.6px*/
+     /*an rem is relative to the root font size (either the default of 16px
+     or whatever font size you have set on the html tag*/
+     margin: 1rem; /*1remx16px=16px*/
+
+}
+h3{
+    font-size:1.6em;
+    padding:0.5em;   
+}
+
+article div{
+    font-size: 36px;
+    padding: 10px;
+    border: 2px solid rgb(4, 81, 35);
+    background-color: rgb(120, 176, 146);
+}
+section:nth-of-type(1) article{
+    /*nth-child secelts an element based on its
+    position in its parent, regardless of the type of the element.
+    nth-of-type will only  select elements at that possiton if it matches hte element type*/
+    /*display flex, by defult, which makes things sit next to each other*/ 
+    display: flex;
+}
+
+section:nth-of-type(2) article{
+    display: flex;
+    /*the direction of the flex is relative to the languege 
+    the site is written in*/
+    flex-direction: row-reverse;
+    /*flex direction can also be column if you can things vertical*/
+
+}
+
+section:nth-of-type(3) article{
+    display:flex;
+    /*there are multiple ways to space the elements in your 
+    flexbox or justify-content 
+    -flex-start, flex-end and centerr which move the 
+    content around
+    -space-between spreads teh elemets out with an equal 
+    amount of space between them
+    -space-around places equal space around each element
+    -space-evenly equaly distributes the elements within 
+    the available space
+    */
+    justify-content: space-evenly;
+}
+
+section:nth-of-type(4) article{
+    display:flex;
+    gap:4px;
+/*you can also add a little bit of space between
+ the objects with gap*/
+}
+
+/*you can tell each object inside the flex to grow to take up 
+the available space*/
+section:nth-of-type(4) article div{
+    flex-grow:1;
+}
+
+/* you can tell indivisual objects to take up more space
+ or less space than other objects...*/
+   section:nth-of-type(4) article div:nth-of-type(2){
+    flex-grow:2;
+   }
